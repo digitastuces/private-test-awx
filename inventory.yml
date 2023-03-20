@@ -1,0 +1,26 @@
+---
+all:
+  vars:
+    #ansible_become_user: vagrant
+    ansible_connection: ssh
+    ansible_port: 22
+    ansible_ssh_private_key_file: /etc/ansible/.ssh/id_rsa
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+    ansible_become: true
+    ansible_become_method: sudo
+    env: "varprod"
+    ansible_user: ansible
+    ansible_ssh_user: ansible
+    default_user_password: passerpasser
+    admin_group: prodgroup
+  children:
+    prodservers:
+      hosts:
+        awx.digitastuces.com:
+          ansible_host: 139.99.8.106
+        galaxy.digitastuces.com:
+          ansible_host: 139.99.131.14
+      vars:
+        env: "varprod"
+        default_user_password: passerpasser
+        admin_group: groupe1
