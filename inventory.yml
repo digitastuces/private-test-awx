@@ -20,6 +20,10 @@ all:
           ansible_host: 139.99.8.106
         galaxy.digitastuces.com:
           ansible_host: 139.99.131.14
+        vault.digitastuces.com:
+          ansible_host: 139.99.8.106
+        consul.digitastuces.com:
+          ansible_host: 139.99.8.106
       vars:
         env: "varprod"
         default_user_password: passerpasser
